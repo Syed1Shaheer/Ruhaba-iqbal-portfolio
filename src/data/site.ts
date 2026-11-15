@@ -11,7 +11,6 @@ export const siteData = {
 };
 
 export const navLinks = [
-  { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Experience', href: '/experience' },
   { label: 'Services', href: '/services' },
