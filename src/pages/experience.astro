@@ -1,0 +1,449 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Professional Experience" page="experience">
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow reveal">Career History</span>
+      <h1 class="display-lg reveal reveal-delay-1">
+        Professional <em style="color:var(--blue)">Experience</em>
+      </h1>
+      <p class="page-subtitle reveal reveal-delay-2">
+        Hands-on e-commerce and social media management experience since October 2022.
+      </p>
+    </div>
+    <div class="page-header-art" aria-hidden="true">
+      <div class="ph-glow-blue"></div>
+      <div class="ph-glow-orange"></div>
+    </div>
+  </section>
+
+  <!-- IMPORTANT NOTE -->
+  <div class="container" style="margin-top:2rem;">
+    <div class="note-banner reveal">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span>Khussa Master is an employment position. Daraz and Alfa Mall are independent stores owned and managed personally.</span>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE SECTION -->
+  <section class="section experience-section">
+    <div class="container">
+
+      <!-- Role 1: Khussa Master -->
+      <div class="exp-block reveal">
+        <div class="exp-left">
+          <div class="exp-company-badge">
+            <div class="exp-company-logo">KM</div>
+            <div>
+              <div class="exp-company-name">Khussa Master</div>
+              <div class="badge badge-orange" style="margin-top:0.3rem;">Employment</div>
+            </div>
+          </div>
+          <div class="exp-meta">
+            <div class="exp-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              November 2025 – Present
+            </div>
+            <div class="exp-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Ongoing
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-right card">
+          <div class="exp-role-header">
+            <h2 class="exp-role-title">E-commerce Manager</h2>
+            <div class="exp-role-note">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Operates the existing Shopify dashboard. Did not develop the website.
+            </div>
+          </div>
+
+          <div class="exp-responsibilities">
+            <h3 class="resp-heading">Responsibilities</h3>
+            <div class="resp-grid">
+              {[
+                { icon: '⚙️', title: 'Daily Operations', desc: 'Managing daily online business operations end-to-end.' },
+                { icon: '📦', title: 'Order & Payment Management', desc: 'Processing customer orders and overseeing payment handling.' },
+                { icon: '📊', title: 'Sales Monitoring', desc: 'Tracking sales figures and monitoring profit margins.' },
+                { icon: '💬', title: 'Customer Communication', desc: 'Handling customer queries, communication, and complaints.' },
+                { icon: '🛍️', title: 'Product Listings', desc: 'Creating and updating product listings on the Shopify store.' },
+                { icon: '📋', title: 'Inventory Management', desc: 'Managing stock levels and coordinating inventory updates.' },
+                { icon: '💲', title: 'Price Updates', desc: 'Maintaining up-to-date and competitive product pricing.' },
+                { icon: '🖥️', title: 'Shopify Dashboard', desc: 'Operating the existing Shopify dashboard for order processing and store management.' },
+                { icon: '👨‍💻', title: 'Developer Coordination', desc: 'Coordinating with website developers on platform-related tasks.' },
+                { icon: '🤖', title: 'AI Product Images', desc: 'Creating AI-generated product images for listings and social media.' },
+                { icon: '📱', title: 'Social Media Support', desc: 'Providing social media product posting support.' },
+              ].map(r => (
+                <div class="resp-item">
+                  <span class="resp-icon">{r.icon}</span>
+                  <div>
+                    <div class="resp-title">{r.title}</div>
+                    <div class="resp-desc">{r.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="exp-tools">
+            <span class="eyebrow">Tools & Platforms</span>
+            <div class="tools-list">
+              <span class="tag">Shopify Dashboard</span>
+              <span class="tag">AI Image Tools</span>
+              <span class="tag">Canva</span>
+              <span class="tag">Social Media Platforms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Role 2: Daraz -->
+      <div class="exp-block reveal">
+        <div class="exp-left">
+          <div class="exp-company-badge">
+            <div class="exp-company-logo blue-logo">D</div>
+            <div>
+              <div class="exp-company-name">Daraz</div>
+              <div class="badge badge-blue" style="margin-top:0.3rem;">Own Store</div>
+            </div>
+          </div>
+          <div class="exp-meta">
+            <div class="exp-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              October 2022 – Present
+            </div>
+            <div class="exp-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              3+ Years
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-right card">
+          <div class="exp-role-header">
+            <h2 class="exp-role-title">Independent Online Store Manager</h2>
+            <div class="exp-role-note own-store">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              Personal initiative — independent store, launched and managed solo since 2022.
+            </div>
+          </div>
+
+          <div class="exp-responsibilities">
+            <h3 class="resp-heading">Responsibilities</h3>
+            <div class="resp-grid">
+              {[
+                { icon: '📝', title: 'Product Listings', desc: 'Creating detailed and attractive product listings for the Daraz platform.' },
+                { icon: '🔍', title: 'SEO-Friendly Content', desc: 'Writing SEO-optimised product titles and descriptions to improve discoverability.' },
+                { icon: '💲', title: 'Price & Stock Updates', desc: 'Regularly updating product prices and managing stock availability.' },
+                { icon: '💬', title: 'Customer Communication', desc: 'Responding to customer queries, reviews, and messages.' },
+                { icon: '📦', title: 'Order Processing', desc: 'Managing and fulfilling customer orders from start to delivery.' },
+              ].map(r => (
+                <div class="resp-item">
+                  <span class="resp-icon">{r.icon}</span>
+                  <div>
+                    <div class="resp-title">{r.title}</div>
+                    <div class="resp-desc">{r.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="exp-tools">
+            <span class="eyebrow">Platform</span>
+            <div class="tools-list">
+              <span class="tag">Daraz Seller Centre</span>
+              <span class="tag">Product SEO</span>
+              <span class="tag">Order Management</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Role 3: Alfa Mall -->
+      <div class="exp-block reveal">
+        <div class="exp-left">
+          <div class="exp-company-badge">
+            <div class="exp-company-logo grey-logo">AM</div>
+            <div>
+              <div class="exp-company-name">Alfa Mall</div>
+              <div class="badge badge-grey" style="margin-top:0.3rem;">Own Store</div>
+            </div>
+          </div>
+          <div class="exp-meta">
+            <div class="exp-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Post-Daraz – Present
+            </div>
+            <div class="exp-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Invited by Platform
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-right card">
+          <div class="exp-role-header">
+            <h2 class="exp-role-title">Independent Online Store Manager</h2>
+            <div class="exp-role-note own-store">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Alfa Mall invited Ruhaba to open a store after her Daraz store received a good response.
+            </div>
+          </div>
+
+          <div class="exp-responsibilities">
+            <h3 class="resp-heading">Responsibilities</h3>
+            <div class="resp-grid">
+              {[
+                { icon: '📝', title: 'Product Listing & Updates', desc: 'Creating and maintaining product listings on the Alfa Mall platform.' },
+                { icon: '💲', title: 'Price & Stock Management', desc: 'Managing pricing strategies and keeping stock information current.' },
+                { icon: '💬', title: 'Customer Communication', desc: 'Responding to customer enquiries and maintaining buyer relationships.' },
+                { icon: '📦', title: 'Order Processing', desc: 'Processing and fulfilling orders placed through Alfa Mall.' },
+              ].map(r => (
+                <div class="resp-item">
+                  <span class="resp-icon">{r.icon}</span>
+                  <div>
+                    <div class="resp-title">{r.title}</div>
+                    <div class="resp-desc">{r.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="exp-tools">
+            <span class="eyebrow">Platform</span>
+            <div class="tools-list">
+              <span class="tag">Alfa Mall Seller Panel</span>
+              <span class="tag">Product Management</span>
+              <span class="tag">Customer Relations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+.page-header {
+  position: relative;
+  padding: 6rem 0 4rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: var(--grey);
+  margin-top: 1rem;
+  max-width: 540px;
+}
+
+.ph-glow-orange {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: var(--orange);
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.07;
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.ph-glow-blue {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: var(--blue);
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.07;
+  top: -150px;
+  right: -150px;
+  pointer-events: none;
+}
+
+/* Note banner */
+.note-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.25rem;
+  background: rgba(57, 123, 255, 0.08);
+  border: 1px solid rgba(57, 123, 255, 0.2);
+  border-radius: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--grey);
+}
+
+.note-banner svg { color: var(--blue); flex-shrink: 0; }
+
+/* Experience block */
+.exp-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .exp-block { grid-template-columns: 220px 1fr; gap: 3rem; }
+}
+
+.exp-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.exp-company-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.exp-company-logo {
+  width: 48px;
+  height: 48px;
+  background: var(--orange);
+  color: var(--bg);
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.exp-company-logo.blue-logo { background: var(--blue); }
+.exp-company-logo.grey-logo { background: var(--secondary); border: 1px solid var(--border-hover); color: var(--grey); }
+
+.exp-company-name {
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--white);
+}
+
+.exp-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.exp-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--grey);
+}
+
+.exp-right {
+  padding: 2rem;
+}
+
+.exp-role-header {
+  margin-bottom: 2rem;
+}
+
+.exp-role-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.exp-role-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--grey);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  padding: 0.6rem 0.9rem;
+}
+
+.exp-role-note svg { flex-shrink: 0; margin-top: 0.1rem; }
+
+.exp-role-note.own-store {
+  background: rgba(57, 123, 255, 0.05);
+  border-color: rgba(57, 123, 255, 0.15);
+  color: rgba(150, 153, 163, 0.9);
+}
+
+.exp-responsibilities { margin-bottom: 2rem; }
+
+.resp-heading {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 1.25rem;
+}
+
+.resp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .resp-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.resp-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.resp-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.resp-title {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--white);
+  margin-bottom: 0.2rem;
+}
+
+.resp-desc {
+  font-size: 0.78rem;
+  color: var(--grey);
+  line-height: 1.5;
+}
+
+.exp-tools { }
+.tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+</style>
+

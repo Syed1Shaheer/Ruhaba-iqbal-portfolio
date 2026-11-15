@@ -1,0 +1,196 @@
+---
+import { siteData, navLinks } from '../data/site';
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-name">RI</span>
+          <div>
+            <div class="footer-name">{siteData.name}</div>
+            <div class="footer-title">{siteData.title}</div>
+          </div>
+        </div>
+        <p class="footer-desc">
+          Based in {siteData.location} — available for social media management and e-commerce roles.
+        </p>
+      </div>
+
+      <div class="footer-nav">
+        <div class="footer-nav-group">
+          <div class="footer-nav-label">Pages</div>
+          <ul>
+            {navLinks.map(link => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="footer-nav-group">
+          <div class="footer-nav-label">Contact</div>
+          <ul>
+            <li><a href={`mailto:${siteData.email}`}>{siteData.email}</a></li>
+            <li><span style="color: var(--grey);">{siteData.location}</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-tagline">
+        <span class="glow-dot orange"></span>
+        "{siteData.tagline}"
+      </div>
+      <div class="footer-copy">
+        © {new Date().getFullYear()} {siteData.name}. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+.site-footer {
+  background: var(--secondary);
+  border-top: 1px solid var(--border);
+  padding: 4rem 0 2rem;
+  margin-top: auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+@media (min-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.logo-name {
+  width: 40px;
+  height: 40px;
+  background: var(--orange);
+  color: var(--bg);
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.footer-name {
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--white);
+}
+
+.footer-title {
+  font-size: 0.75rem;
+  color: var(--grey);
+}
+
+.footer-desc {
+  font-size: 0.875rem;
+  color: var(--grey);
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.footer-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.footer-nav-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-nav a {
+  font-size: 0.85rem;
+  color: var(--grey);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover { color: var(--white); }
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.footer-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--grey);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.glow-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.glow-dot.orange {
+  background: var(--orange);
+  box-shadow: 0 0 8px var(--orange);
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--grey);
+  opacity: 0.6;
+}
+
+@media print {
+  .site-footer { display: none; }
+}
+</style>

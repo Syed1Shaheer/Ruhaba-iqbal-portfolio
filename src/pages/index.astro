@@ -1,0 +1,840 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData, services, projects } from '../data/site';
+---
+
+<Layout title="Home" page="home" description={siteData.intro}>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <!-- Abstract background artwork -->
+    <div class="hero-art" aria-hidden="true">
+      <div class="art-circle art-circle-1"></div>
+      <div class="art-circle art-circle-2"></div>
+      <div class="art-line art-line-1"></div>
+      <div class="art-line art-line-2"></div>
+      <div class="art-dot-grid"></div>
+      <div class="art-glow art-glow-orange"></div>
+      <div class="art-glow art-glow-blue"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-left">
+        <div class="eyebrow reveal">
+          <span class="glow-dot-sm orange"></span>
+          Social Media &amp; E-commerce Manager
+        </div>
+
+        <h1 class="hero-name reveal reveal-delay-1">
+          <span class="name-ruhaba">Ruhaba</span><br/>
+          <span class="name-iqbal">Iqbal</span>
+        </h1>
+
+        <p class="hero-tagline reveal reveal-delay-2">
+          <span class="tagline-quote">"</span>{siteData.tagline}<span class="tagline-quote">"</span>
+        </p>
+
+        <p class="hero-intro reveal reveal-delay-3">{siteData.intro}</p>
+
+        <div class="hero-actions reveal reveal-delay-4">
+          <a href="/projects" class="btn btn-primary">
+            Explore My Work
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/contact" class="btn btn-outline">
+            Let's Connect
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right reveal reveal-delay-2">
+        <div class="hero-abstract">
+          <div class="abstract-box box-1">
+            <span class="eyebrow">Since</span>
+            <span class="abstract-num">2022</span>
+            <span class="abstract-label">In Digital Commerce</span>
+          </div>
+          <div class="abstract-box box-2">
+            <span class="eyebrow">Platforms</span>
+            <div class="platform-badges">
+              <span class="badge badge-orange">Shopify</span>
+              <span class="badge badge-blue">Daraz</span>
+              <span class="badge badge-grey">Alfa Mall</span>
+            </div>
+          </div>
+          <div class="abstract-box box-3">
+            <span class="eyebrow">Specialised In</span>
+            <span class="abstract-label">Social Media Management &amp; E-commerce Operations</span>
+          </div>
+          <div class="abstract-box box-4">
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <span>Social Media</span>
+                <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <span>E-commerce</span>
+                <div class="skill-bar"><div class="skill-fill blue" style="width:88%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <span>Canva Design</span>
+                <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <span>Video Editing</span>
+                <div class="skill-bar"><div class="skill-fill blue" style="width:75%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Strip -->
+    <div class="info-strip">
+      <div class="container info-strip-inner">
+        <div class="info-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          {siteData.location}
+        </div>
+        <div class="info-sep" aria-hidden="true">/</div>
+        <div class="info-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          BS Digital Media Marketing — University of Karachi
+        </div>
+        <div class="info-sep" aria-hidden="true">/</div>
+        <div class="info-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Active Since October 2022
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED PROJECTS PREVIEW ===== -->
+  <section class="section projects-preview">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Featured Work</span>
+        <h2 class="section-title">Projects &amp; <em style="color:var(--orange)">Experience</em></h2>
+      </div>
+
+      <div class="projects-bento reveal reveal-delay-1">
+        {projects.slice(0, 4).map((project, i) => (
+          <a href="/projects" class:list={['project-card card', `project-card-${i + 1}`]}>
+            <div class="project-img-placeholder img-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span>Add image to<br/>public/images/projects/{project.id}/</span>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class:list={['badge', i % 2 === 0 ? 'badge-orange' : 'badge-blue']}>{project.type}</span>
+                <span class="project-period">{project.period}</span>
+              </div>
+              <h3 class="project-title">{project.title}</h3>
+              <p class="project-subtitle">{project.subtitle}</p>
+              <div class="project-tags">
+                {project.tags.slice(0, 3).map(tag => <span class="tag">{tag}</span>)}
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="section-cta reveal">
+        <a href="/projects" class="btn btn-outline">View All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE PREVIEW ===== -->
+  <section class="section experience-preview" style="background: var(--secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="exp-preview-grid">
+        <div class="exp-preview-left reveal">
+          <span class="eyebrow">Professional Background</span>
+          <h2 class="section-title">3+ Years of <em style="color:var(--blue)">Digital</em> Experience</h2>
+          <p style="color:var(--grey); margin: 1.5rem 0; line-height: 1.8;">
+            From launching her own independent stores on Daraz and Alfa Mall in 2022, to managing e-commerce operations for Khussa Master — Ruhaba brings real, hands-on digital commerce experience.
+          </p>
+          <a href="/experience" class="btn btn-ghost">View Full Experience</a>
+        </div>
+
+        <div class="exp-preview-right">
+          <div class="exp-timeline-mini">
+            <div class="exp-mini-item reveal reveal-delay-1">
+              <div class="exp-mini-dot orange"></div>
+              <div class="exp-mini-content">
+                <div class="exp-mini-period badge badge-orange">Nov 2025 – Present</div>
+                <div class="exp-mini-title">E-commerce Manager</div>
+                <div class="exp-mini-company">Khussa Master</div>
+              </div>
+            </div>
+            <div class="exp-mini-item reveal reveal-delay-2">
+              <div class="exp-mini-dot blue"></div>
+              <div class="exp-mini-content">
+                <div class="exp-mini-period badge badge-blue">Oct 2022 – Present</div>
+                <div class="exp-mini-title">Independent Store Owner</div>
+                <div class="exp-mini-company">Daraz</div>
+              </div>
+            </div>
+            <div class="exp-mini-item reveal reveal-delay-3">
+              <div class="exp-mini-dot grey"></div>
+              <div class="exp-mini-content">
+                <div class="exp-mini-period badge badge-grey">Post-Daraz – Present</div>
+                <div class="exp-mini-title">Independent Store Owner</div>
+                <div class="exp-mini-company">Alfa Mall</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES PREVIEW ===== -->
+  <section class="section services-preview">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">What I Offer</span>
+        <h2 class="section-title">Services &amp; <em style="color:var(--orange)">Skills</em></h2>
+      </div>
+      <div class="services-grid">
+        {services.slice(0, 6).map((service, i) => (
+          <div class:list={['service-mini card reveal', `reveal-delay-${(i % 3) + 1}`]}>
+            <div class="service-icon">{service.icon}</div>
+            <h3 class="service-title">{service.title}</h3>
+            <p class="service-desc">{service.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="section-cta reveal">
+        <a href="/services" class="btn btn-outline">All Services & Skills</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PHILOSOPHY ===== -->
+  <section class="section philosophy" style="background: var(--secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="philosophy-layout">
+        <div class="philosophy-left reveal">
+          <span class="eyebrow">Work Philosophy</span>
+          <span class="glow-line-orange" style="max-width:60px;"></span>
+          <blockquote class="philosophy-quote">
+            "Great digital results start with understanding people — not just algorithms."
+          </blockquote>
+        </div>
+        <div class="philosophy-right">
+          <div class="philosophy-pillars">
+            {[
+              { icon: '👁️', text: 'Understanding audiences before creating content' },
+              { icon: '📣', text: 'Consistent brand communication across every touchpoint' },
+              { icon: '✨', text: 'Meaningful, engaging content that connects' },
+              { icon: '🔒', text: 'Careful, responsible online operations' },
+              { icon: '🤝', text: 'Building lasting customer trust and loyalty' },
+              { icon: '🚀', text: 'Using creativity and digital tools for real business growth' },
+            ].map((p, i) => (
+              <div class:list={['pillar-item reveal', `reveal-delay-${(i % 3) + 1}`]}>
+                <span class="pillar-icon">{p.icon}</span>
+                <span class="pillar-text">{p.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT CTA ===== -->
+  <section class="section contact-cta">
+    <div class="container">
+      <div class="cta-block reveal">
+        <div class="cta-art" aria-hidden="true">
+          <div class="cta-glow-orange"></div>
+          <div class="cta-glow-blue"></div>
+        </div>
+        <span class="eyebrow">Get In Touch</span>
+        <h2 class="display-md" style="margin: 1rem 0;">Ready to Work <em style="color:var(--orange)">Together?</em></h2>
+        <p style="color:var(--grey); max-width:500px; margin: 0 auto 2rem; line-height:1.7;">
+          Looking for a dedicated Social Media & E-commerce Manager? Let's talk about how I can help grow your digital presence.
+        </p>
+        <div class="cta-actions">
+          <a href="/contact" class="btn btn-primary">
+            Contact Me
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/strategy" class="btn btn-outline">View Strategy Proposal</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.hero-art {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.art-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid;
+}
+
+.art-circle-1 {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  right: -150px;
+  border-color: rgba(255, 107, 53, 0.08);
+  animation: rotate-slow 40s linear infinite;
+}
+
+.art-circle-2 {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  right: -50px;
+  border-color: rgba(57, 123, 255, 0.07);
+  animation: rotate-slow 30s linear infinite reverse;
+}
+
+.art-line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+  height: 1px;
+  width: 100%;
+}
+
+.art-line-1 { top: 30%; }
+.art-line-2 { top: 65%; }
+
+.art-dot-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(243,240,234,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 60% 60% at 80% 50%, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 60% at 80% 50%, black 30%, transparent 70%);
+}
+
+.art-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.12;
+}
+
+.art-glow-orange {
+  width: 500px;
+  height: 500px;
+  background: var(--orange);
+  top: -100px;
+  right: -100px;
+}
+
+.art-glow-blue {
+  width: 300px;
+  height: 300px;
+  background: var(--blue);
+  bottom: 10%;
+  right: 20%;
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  flex: 1;
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 5rem;
+  }
+}
+
+.glow-dot-sm {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.glow-dot-sm.orange {
+  background: var(--orange);
+  box-shadow: 0 0 8px var(--orange);
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-name {
+  font-family: var(--font-serif);
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+}
+
+.name-ruhaba {
+  color: var(--white);
+}
+
+.name-iqbal {
+  color: var(--orange);
+  -webkit-text-stroke: 2px var(--orange);
+  color: transparent;
+}
+
+@media (min-width: 768px) {
+  .name-iqbal {
+    -webkit-text-stroke: 3px var(--orange);
+  }
+}
+
+.hero-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--grey);
+}
+
+.tagline-quote {
+  color: var(--orange);
+  font-size: 1.5em;
+  line-height: 0;
+  vertical-align: -0.3em;
+}
+
+.hero-intro {
+  font-size: 0.95rem;
+  color: var(--grey);
+  line-height: 1.8;
+  max-width: 520px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Hero right — abstract boxes */
+.hero-abstract {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+}
+
+.abstract-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color 0.3s;
+}
+
+.abstract-box:hover { border-color: var(--border-hover); }
+
+.box-1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.box-2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.box-3 {
+  grid-column: 1 / 3;
+  grid-row: 2;
+}
+
+.box-4 {
+  grid-column: 1 / 3;
+  grid-row: 3;
+}
+
+.abstract-num {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.abstract-label {
+  font-size: 0.8rem;
+  color: var(--grey);
+  line-height: 1.4;
+}
+
+.platform-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skill-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.skill-bar-item span {
+  font-size: 0.72rem;
+  color: var(--grey);
+}
+
+.skill-bar {
+  height: 3px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: var(--orange);
+  border-radius: 10px;
+  transition: width 1.5s ease;
+}
+
+.skill-fill.blue {
+  background: var(--blue);
+}
+
+/* Info Strip */
+.info-strip {
+  position: relative;
+  z-index: 1;
+  background: var(--secondary);
+  border-top: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.info-strip-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .info-strip-inner { justify-content: flex-start; }
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--grey);
+}
+
+.info-item svg { opacity: 0.6; }
+
+.info-sep {
+  color: var(--border-hover);
+  display: none;
+}
+
+@media (min-width: 640px) { .info-sep { display: block; } }
+
+/* Projects preview */
+.projects-bento {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 640px) {
+  .projects-bento { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 1024px) {
+  .projects-bento {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .project-card-1 {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.project-img-placeholder {
+  flex: 1;
+  min-height: 160px;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+@media (min-width: 1024px) {
+  .project-card-1 .project-img-placeholder { min-height: 240px; }
+}
+
+.project-info {
+  padding: 1.25rem;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-period {
+  font-size: 0.65rem;
+  color: var(--grey);
+}
+
+.project-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
+
+.project-subtitle {
+  font-size: 0.78rem;
+  color: var(--grey);
+  margin-bottom: 0.75rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.section-header {
+  margin-bottom: 1rem;
+}
+
+.section-header .eyebrow {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.section-cta {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/* Experience preview */
+.exp-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .exp-preview-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.exp-timeline-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.exp-mini-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.exp-mini-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+}
+
+.exp-mini-dot.orange { background: var(--orange); box-shadow: 0 0 10px var(--orange); }
+.exp-mini-dot.blue { background: var(--blue); box-shadow: 0 0 10px var(--blue); }
+.exp-mini-dot.grey { background: var(--grey); }
+
+.exp-mini-content { display: flex; flex-direction: column; gap: 0.3rem; }
+.exp-mini-period { width: fit-content; }
+.exp-mini-title { font-weight: 700; font-size: 0.95rem; color: var(--white); }
+.exp-mini-company { font-size: 0.8rem; color: var(--grey); }
+
+/* Services mini */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 640px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.service-mini {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.service-icon { font-size: 1.75rem; }
+.service-title { font-family: var(--font-serif); font-size: 1rem; font-weight: 800; color: var(--white); }
+.service-desc { font-size: 0.82rem; color: var(--grey); line-height: 1.6; }
+
+/* Philosophy */
+.philosophy-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .philosophy-layout { grid-template-columns: 1fr 1.5fr; align-items: center; }
+}
+
+.philosophy-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.4;
+  border-left: 3px solid var(--orange);
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.philosophy-pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 480px) { .philosophy-pillars { grid-template-columns: repeat(3, 1fr); } }
+
+.pillar-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.pillar-item:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+}
+
+.pillar-icon { font-size: 1.5rem; }
+.pillar-text { font-size: 0.78rem; color: var(--grey); line-height: 1.5; }
+
+/* Contact CTA */
+.contact-cta { text-align: center; }
+
+.cta-block {
+  position: relative;
+  padding: 5rem 2rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  background: var(--secondary);
+}
+
+.cta-art { position: absolute; inset: 0; pointer-events: none; }
+
+.cta-glow-orange {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: var(--orange);
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.08;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+
+.cta-glow-blue {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: var(--blue);
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.08;
+  top: 50%;
+  right: 10%;
+  transform: translate(50%, -50%);
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+</style>
+

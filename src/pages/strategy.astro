@@ -1,0 +1,555 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+const contentCalendar = [
+  { day: 'Monday', theme: 'Educational Content', platform: 'Instagram', format: 'Carousel', idea: 'Academic tips, subject guides, or career advice for Mass Comm students', color: 'orange' },
+  { day: 'Tuesday', theme: 'Student Achievement', platform: 'Facebook', format: 'Post', idea: 'Highlighting a student award, project, or academic milestone', color: 'blue' },
+  { day: 'Wednesday', theme: 'Faculty Highlight', platform: 'Instagram', format: 'Reel / Story', idea: 'Short interview or feature on a faculty member and their work', color: 'orange' },
+  { day: 'Thursday', theme: 'Department Events', platform: 'Facebook + Instagram', format: 'Announcement', idea: 'Upcoming seminar, workshop, or departmental event coverage', color: 'blue' },
+  { day: 'Friday', theme: 'Student Activities', platform: 'Instagram', format: 'Story / Reel', idea: 'Behind-the-scenes content from campus life or student projects', color: 'orange' },
+  { day: 'Saturday', theme: 'Engagement Post', platform: 'Instagram', format: 'Poll / Q&A', idea: 'Quiz, poll, or Q&A about Mass Communication topics or student life', color: 'blue' },
+  { day: 'Sunday', theme: 'Academic Information', platform: 'Facebook', format: 'Information Post', idea: 'Admission updates, course information, or department announcements', color: 'grey' },
+];
+
+const contentPillars = [
+  { icon: '📚', title: 'Educational Content', desc: 'Tips, guides, and insights relevant to Digital Media Marketing and Mass Communication.' },
+  { icon: '🏆', title: 'Student Achievements', desc: 'Celebrating academic milestones, project completions, and student excellence.' },
+  { icon: '📅', title: 'Department Events', desc: 'Coverage of seminars, workshops, guest lectures, and university events.' },
+  { icon: 'ℹ️', title: 'Academic Information', desc: 'Admissions, course details, deadlines, and important announcements.' },
+  { icon: '🎓', title: 'Student Activities', desc: 'Campus life, student projects, and behind-the-scenes department content.' },
+  { icon: '👨‍🏫', title: 'Faculty Highlights', desc: 'Featuring faculty members, their expertise, research, and contributions.' },
+];
+---
+
+<Layout title="Social Media Strategy" page="strategy">
+
+  <!-- CONCEPT LABEL — always visible -->
+  <div class="concept-banner">
+    <div class="container">
+      <div class="concept-inner">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        <strong>CONCEPT / SAMPLE STRATEGY</strong> — Prepared for interview presentation. This is a proposed strategy, not a record of previous work.
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow reveal">Interview Strategy Proposal</span>
+      <h1 class="display-lg reveal reveal-delay-1">
+        Social Media <em style="color:var(--orange)">Strategy</em>
+      </h1>
+      <h2 class="strategy-subheading reveal reveal-delay-2">
+        Department of Mass Communication — University of Karachi
+      </h2>
+      <p class="page-subtitle reveal reveal-delay-3">
+        A sample social media strategy developed to demonstrate how I would approach managing the department's digital presence, if given the opportunity.
+      </p>
+    </div>
+    <div class="page-header-art" aria-hidden="true">
+      <div class="ph-glow-orange"></div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section strategy-overview">
+    <div class="container">
+      <div class="overview-grid">
+        <div class="overview-text reveal">
+          <span class="eyebrow">Strategic Objective</span>
+          <span class="glow-line-orange" style="max-width:50px; margin-top:0.75rem;"></span>
+          <h2 class="display-sm" style="margin-bottom:1.5rem;">Build a Visible, Engaged, and <em style="color:var(--orange)">Proud</em> Department Community</h2>
+          <p style="color:var(--grey); line-height:1.9; margin-bottom:1rem;">
+            The Department of Mass Communication has an opportunity to build a vibrant digital presence that connects students, faculty, alumni, and prospective applicants. A consistent, well-planned social media strategy can increase visibility, build pride in the department, and attract new students.
+          </p>
+          <p style="color:var(--grey); line-height:1.9;">
+            This sample strategy focuses on Instagram and Facebook as the primary platforms, with a content calendar designed around six core content pillars that balance promotion, education, engagement, and community.
+          </p>
+        </div>
+
+        <div class="overview-stats reveal reveal-delay-1">
+          {[
+            { label: 'Primary Platforms', value: '2', sub: 'Instagram + Facebook' },
+            { label: 'Content Pillars', value: '6', sub: 'Balanced Mix' },
+            { label: 'Posts Per Week', value: '7', sub: 'Mon–Sun Calendar' },
+          ].map(stat => (
+            <div class="stat-card card">
+              <div class="stat-value">{stat.value}</div>
+              <div class="stat-label">{stat.label}</div>
+              <div class="stat-sub">{stat.sub}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT PILLARS -->
+  <section class="section pillars-section" style="background:var(--secondary); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:3rem;">
+        <span class="eyebrow">Content Strategy</span>
+        <h2 class="section-title">Content <em style="color:var(--blue)">Pillars</em></h2>
+      </div>
+      <div class="pillars-grid">
+        {contentPillars.map((p, i) => (
+          <div class:list={['pillar-card card reveal', `reveal-delay-${i + 1}`]}>
+            <div class="pillar-icon">{p.icon}</div>
+            <h3 class="pillar-title">{p.title}</h3>
+            <p class="pillar-desc">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM IDEAS -->
+  <section class="section platforms-section">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:3rem;">
+        <span class="eyebrow">Platform Strategy</span>
+        <h2 class="section-title">Platform <em style="color:var(--orange)">Ideas</em></h2>
+      </div>
+      <div class="platforms-grid">
+        <!-- Instagram -->
+        <div class="platform-card card reveal">
+          <div class="platform-header">
+            <div class="platform-icon" style="background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="white" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="white" stroke-width="2"/></svg>
+            </div>
+            <div>
+              <div class="platform-name">Instagram</div>
+              <div class="platform-type">Visual Storytelling</div>
+            </div>
+          </div>
+          <ul class="platform-ideas">
+            {[
+              'Reels — short, engaging department moments',
+              'Carousels — educational tips and achievements',
+              'Stories — daily updates and engagement polls',
+              'Student interview highlight reels',
+              'Event coverage and behind-the-scenes',
+              'Faculty spotlights in portrait format',
+            ].map(idea => (
+              <li>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                {idea}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Facebook -->
+        <div class="platform-card card reveal reveal-delay-1">
+          <div class="platform-header">
+            <div class="platform-icon" style="background: #1877F2;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </div>
+            <div>
+              <div class="platform-name">Facebook</div>
+              <div class="platform-type">Community & Announcements</div>
+            </div>
+          </div>
+          <ul class="platform-ideas">
+            {[
+              'Official announcements and notices',
+              'Event coverage — before, during, and after',
+              'Academic updates and admission information',
+              'Student and alumni achievement posts',
+              'Sharing departmental publications and resources',
+              'Longer-form updates and community posts',
+            ].map(idea => (
+              <li>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                {idea}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Engagement -->
+        <div class="platform-card card reveal reveal-delay-2">
+          <div class="platform-header">
+            <div class="platform-icon" style="background: var(--orange);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="platform-name">Student Engagement</div>
+              <div class="platform-type">Interactive Formats</div>
+            </div>
+          </div>
+          <ul class="platform-ideas">
+            {[
+              'Polls — course topics, campus opinions',
+              'Quizzes — Media & Communication trivia',
+              'Q&A sessions with faculty',
+              'Student spotlight series',
+              'Behind-the-scenes of department projects',
+              'User-generated content — student submissions',
+            ].map(idea => (
+              <li>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                {idea}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT CALENDAR -->
+  <section class="section calendar-section" style="background:var(--secondary); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:1rem;">
+        <span class="eyebrow">Sample Week</span>
+        <h2 class="section-title">Content <em style="color:var(--blue)">Calendar</em></h2>
+        <p style="color:var(--grey); font-size:0.875rem; margin-top:0.75rem;">Monday – Sunday sample posting schedule</p>
+      </div>
+
+      <div class="calendar-grid">
+        {contentCalendar.map((item, i) => (
+          <div class:list={['cal-card card reveal', `reveal-delay-${(i % 4) + 1}`]}>
+            <div class:list={['cal-day-badge', item.color]}>{item.day}</div>
+            <div class="cal-platform">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 16 2a4.48 4.48 0 0 0-4.44 5.33A12.72 12.72 0 0 1 2.73 3.56a4.49 4.49 0 0 0 1.4 6A4.45 4.45 0 0 1 2 9v.06A4.48 4.48 0 0 0 5.6 13.4a4.48 4.48 0 0 1-2 .08 4.49 4.49 0 0 0 4.19 3.12 9 9 0 0 1-5.6 1.93A9.4 9.4 0 0 1 2 18.46a12.69 12.69 0 0 0 6.88 2"/></svg>
+              {item.platform}
+            </div>
+            <div class:list={['cal-format', item.color === 'orange' ? 'badge badge-orange' : item.color === 'blue' ? 'badge badge-blue' : 'badge badge-grey']} style="font-size:0.6rem; padding:0.2rem 0.6rem; width:fit-content; margin-bottom:0.75rem;">{item.format}</div>
+            <h3 class="cal-theme">{item.theme}</h3>
+            <p class="cal-idea">{item.idea}</p>
+
+            <!-- Sample post placeholder -->
+            <div class="img-placeholder cal-post-placeholder">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span style="font-size:0.65rem;">Sample post image</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH NOTE -->
+  <section class="section approach-section">
+    <div class="container">
+      <div class="approach-block reveal">
+        <div class="approach-left">
+          <span class="eyebrow">My Approach</span>
+          <span class="glow-line-orange" style="max-width:50px; margin-top:0.75rem;"></span>
+          <blockquote class="approach-quote">
+            "Before creating any content, I believe in understanding the audience — who they are, what they care about, and what will make them engage."
+          </blockquote>
+        </div>
+        <div class="approach-right">
+          <h3 style="font-family:var(--font-serif); font-size:1.2rem; margin-bottom:1.25rem; color:var(--white);">Implementation Steps</h3>
+          <div class="steps-list">
+            {[
+              { step: '01', title: 'Audience Research', desc: 'Understand the department\'s audience — current students, prospective applicants, faculty, and alumni.' },
+              { step: '02', title: 'Brand Voice', desc: 'Establish a consistent, professional yet approachable brand voice for the department.' },
+              { step: '03', title: 'Content Calendar', desc: 'Plan and schedule content ahead of time to maintain consistency without last-minute rushing.' },
+              { step: '04', title: 'Engagement Monitoring', desc: 'Track which content resonates most and adapt the strategy based on performance.' },
+              { step: '05', title: 'Student Collaboration', desc: 'Involve students in content creation for authenticity — user-generated content builds trust.' },
+            ].map(s => (
+              <div class="step-item">
+                <div class="step-num">{s.step}</div>
+                <div>
+                  <div class="step-title">{s.title}</div>
+                  <div class="step-desc">{s.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+/* Concept Banner */
+.concept-banner {
+  background: rgba(255, 107, 53, 0.1);
+  border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+  padding: 0.65rem 0;
+}
+
+.concept-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: rgba(255, 107, 53, 0.9);
+  flex-wrap: wrap;
+}
+
+.concept-inner svg { flex-shrink: 0; }
+
+/* Page header */
+.page-header {
+  position: relative;
+  padding: 6rem 0 4rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.strategy-subheading {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--grey);
+  letter-spacing: 0.03em;
+  margin-top: 0.5rem;
+}
+
+.page-subtitle {
+  font-size: 1rem;
+  color: var(--grey);
+  margin-top: 1rem;
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+.ph-glow-orange {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: var(--orange);
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.07;
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+
+/* Overview */
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .overview-grid { grid-template-columns: 1.5fr 0.5fr; align-items: start; }
+}
+
+.overview-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 480px) and (max-width: 1023px) {
+  .overview-stats { flex-direction: row; }
+}
+
+.stat-card {
+  padding: 1.5rem;
+  text-align: center;
+  flex: 1;
+}
+
+.stat-value {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-top: 0.4rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.stat-sub {
+  font-size: 0.72rem;
+  color: var(--grey);
+  margin-top: 0.25rem;
+}
+
+/* Pillars */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) { .pillars-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .pillars-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.pillar-card { padding: 1.75rem; }
+.pillar-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.pillar-title { font-family: var(--font-serif); font-size: 1rem; font-weight: 800; color: var(--white); margin-bottom: 0.5rem; }
+.pillar-desc { font-size: 0.8rem; color: var(--grey); line-height: 1.6; }
+
+/* Platforms */
+.platforms-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) { .platforms-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.platform-card { padding: 2rem; }
+
+.platform-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.platform-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.platform-name {
+  font-weight: 700;
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.platform-type {
+  font-size: 0.72rem;
+  color: var(--grey);
+}
+
+.platform-ideas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.platform-ideas li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--grey);
+  line-height: 1.4;
+}
+
+.platform-ideas svg { flex-shrink: 0; margin-top: 0.1rem; }
+
+/* Calendar */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 480px) { .calendar-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 768px) { .calendar-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 1200px) { .calendar-grid { grid-template-columns: repeat(7, 1fr); } }
+
+.cal-card { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.4rem; }
+
+.cal-day-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.cal-day-badge.orange { color: var(--orange); }
+.cal-day-badge.blue { color: var(--blue); }
+.cal-day-badge.grey { color: var(--grey); }
+
+.cal-platform {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.65rem;
+  color: var(--grey);
+  margin-bottom: 0.4rem;
+}
+
+.cal-theme {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+
+.cal-idea { font-size: 0.72rem; color: var(--grey); line-height: 1.4; flex: 1; }
+
+.cal-post-placeholder {
+  min-height: 80px;
+  margin-top: auto;
+  font-size: 0.65rem;
+  border-radius: 0.4rem;
+}
+
+/* Approach */
+.approach-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .approach-block { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+
+.approach-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--white);
+  line-height: 1.5;
+  border-left: 3px solid var(--orange);
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.steps-list { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.step-num {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+  opacity: 0.6;
+  flex-shrink: 0;
+  min-width: 2.5rem;
+}
+
+.step-title {
+  font-weight: 700;
+  color: var(--white);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.step-desc { font-size: 0.8rem; color: var(--grey); line-height: 1.5; }
+</style>
+

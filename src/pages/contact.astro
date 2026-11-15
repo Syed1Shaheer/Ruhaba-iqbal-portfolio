@@ -1,0 +1,411 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/site';
+---
+
+<Layout title="Contact" page="contact">
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow reveal">Get In Touch</span>
+      <h1 class="display-lg reveal reveal-delay-1">
+        Let's <em style="color:var(--orange)">Connect</em>
+      </h1>
+      <p class="page-subtitle reveal reveal-delay-2">
+        Open to social media management and e-commerce opportunities in Karachi.
+      </p>
+    </div>
+    <div class="page-header-art" aria-hidden="true">
+      <div class="ph-glow-orange"></div>
+      <div class="ph-glow-blue"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section contact-section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Left — Info -->
+        <div class="contact-info reveal">
+          <div class="contact-name-block">
+            <div class="contact-logo">RI</div>
+            <div>
+              <h2 class="contact-name">{siteData.name}</h2>
+              <p class="contact-title">{siteData.title}</p>
+            </div>
+          </div>
+
+          <p class="contact-bio">
+            Based in {siteData.location}, Ruhaba is currently pursuing her BS Digital Media Marketing while actively managing e-commerce operations and social media responsibilities. She is open to discussing relevant career opportunities.
+          </p>
+
+          <div class="contact-details">
+            <a href={`mailto:${siteData.email}`} class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">{siteData.email}</div>
+              </div>
+            </a>
+
+            <a href={`tel:${siteData.phone}`} class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.5 2 2 0 0 1 3.62 1.5h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.07a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2z"/></svg>
+              </div>
+              <div>
+                <div class="contact-item-label">Phone</div>
+                <div class="contact-item-value">{siteData.phone}</div>
+              </div>
+            </a>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-item-label">Location</div>
+                <div class="contact-item-value">{siteData.location}</div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              </div>
+              <div>
+                <div class="contact-item-label">Education</div>
+                <div class="contact-item-value">BS Digital Media Marketing — University of Karachi</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Availability badge -->
+          <div class="availability-badge">
+            <div class="avail-dot"></div>
+            <span>Currently available for opportunities</span>
+          </div>
+        </div>
+
+        <!-- Right — CTA & Quick Info -->
+        <div class="contact-right">
+          <!-- Interview CTA -->
+          <div class="interview-cta card reveal reveal-delay-1">
+            <div class="interview-cta-art" aria-hidden="true">
+              <div class="icta-glow"></div>
+            </div>
+            <span class="eyebrow">Interview Opportunity</span>
+            <h3 class="icta-heading">Social Media Manager<br/>— Department of Mass Communication</h3>
+            <p class="icta-desc">
+              Ruhaba has prepared a complete social media strategy for the Department as part of her interview presentation. View the strategy proposal to see her approach.
+            </p>
+            <div class="icta-actions">
+              <a href="/strategy" class="btn btn-primary">View Strategy Proposal</a>
+              <a href="/experience" class="btn btn-outline">View Experience</a>
+            </div>
+          </div>
+
+          <!-- Quick profile -->
+          <div class="quick-profile card reveal reveal-delay-2">
+            <span class="eyebrow" style="margin-bottom:1rem; display:block;">Quick Profile</span>
+            <div class="profile-items">
+              {[
+                { label: 'Full Name', value: siteData.name },
+                { label: 'Role', value: siteData.title },
+                { label: 'Education', value: 'BS Digital Media Marketing, 2nd Year (4th Sem)' },
+                { label: 'University', value: 'University of Karachi — Dept. of Mass Communication' },
+                { label: 'Languages', value: 'Urdu (Fluent), English (Intermediate)' },
+                { label: 'Location', value: siteData.location },
+                { label: 'Available', value: 'Yes — open to relevant opportunities' },
+              ].map(item => (
+                <div class="profile-item">
+                  <span class="profile-label">{item.label}</span>
+                  <span class="profile-value">{item.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Print hint -->
+          <div class="print-hint reveal reveal-delay-3 no-print">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <span>Use <strong>Ctrl+P → Save as PDF</strong> to export this portfolio as a PDF document.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+.page-header {
+  position: relative;
+  padding: 6rem 0 4rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: var(--grey);
+  margin-top: 1rem;
+  max-width: 500px;
+}
+
+.ph-glow-orange {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: var(--orange);
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.08;
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.ph-glow-blue {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: var(--blue);
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.06;
+  bottom: -50px;
+  left: 30%;
+  pointer-events: none;
+}
+
+/* Contact layout */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .contact-layout { grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; }
+}
+
+/* Contact info */
+.contact-name-block {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-logo {
+  width: 56px;
+  height: 56px;
+  background: var(--orange);
+  color: var(--bg);
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.contact-name {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.contact-title {
+  font-size: 0.82rem;
+  color: var(--grey);
+  margin-top: 0.2rem;
+}
+
+.contact-bio {
+  font-size: 0.9rem;
+  color: var(--grey);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+a.contact-item:hover { opacity: 0.8; }
+
+.contact-item-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange);
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+
+a.contact-item:hover .contact-item-icon { border-color: var(--border-hover); }
+
+.contact-item-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 0.2rem;
+}
+
+.contact-item-value {
+  font-size: 0.875rem;
+  color: var(--white);
+  font-weight: 500;
+}
+
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  background: rgba(57, 123, 255, 0.08);
+  border: 1px solid rgba(57, 123, 255, 0.2);
+  border-radius: 100px;
+  font-size: 0.8rem;
+  color: rgba(57, 123, 255, 0.9);
+}
+
+.avail-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--blue);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--blue);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Right column */
+.contact-right { display: flex; flex-direction: column; gap: 1.5rem; }
+
+/* Interview CTA */
+.interview-cta {
+  position: relative;
+  padding: 2.5rem;
+  overflow: hidden;
+  border-color: rgba(255, 107, 53, 0.2);
+  background: linear-gradient(135deg, var(--card), rgba(255,107,53,0.05));
+}
+
+.interview-cta-art { position: absolute; inset: 0; pointer-events: none; }
+
+.icta-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: var(--orange);
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.06;
+  top: -100px;
+  right: -100px;
+}
+
+.icta-heading {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--white);
+  margin: 0.75rem 0;
+  line-height: 1.3;
+  position: relative;
+}
+
+.icta-desc {
+  font-size: 0.85rem;
+  color: var(--grey);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.icta-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Quick profile */
+.quick-profile { padding: 2rem; }
+
+.profile-items { display: flex; flex-direction: column; }
+
+.profile-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.profile-item:last-child { border-bottom: none; }
+
+.profile-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--grey);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  min-width: 100px;
+}
+
+.profile-value {
+  font-size: 0.82rem;
+  color: var(--white);
+  text-align: right;
+}
+
+/* Print hint */
+.print-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.25rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--grey);
+}
+
+.print-hint strong { color: var(--white); }
+</style>
+

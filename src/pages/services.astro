@@ -1,0 +1,282 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { services, skills } from '../data/site';
+---
+
+<Layout title="Services & Skills" page="services">
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow reveal">What I Offer</span>
+      <h1 class="display-lg reveal reveal-delay-1">
+        Services &amp; <em style="color:var(--orange)">Skills</em>
+      </h1>
+      <p class="page-subtitle reveal reveal-delay-2">
+        From social media strategy to daily e-commerce operations — a full range of digital services.
+      </p>
+    </div>
+    <div class="page-header-art" aria-hidden="true">
+      <div class="ph-glow-orange"></div>
+    </div>
+  </section>
+
+  <!-- SERVICES BENTO -->
+  <section class="section services-section">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:3rem;">
+        <span class="eyebrow">Services</span>
+        <span class="glow-line-orange" style="max-width:50px; margin-top:0.75rem;"></span>
+      </div>
+
+      <div class="services-bento">
+        {services.map((service, i) => (
+          <div class:list={['service-card card reveal', `reveal-delay-${(i % 4) + 1}`, i === 0 && 'service-featured']}>
+            <div class="service-icon-wrap">
+              <span class="service-icon-lg">{service.icon}</span>
+            </div>
+            <h3 class="service-title">{service.title}</h3>
+            <p class="service-desc">{service.desc}</p>
+            {i === 0 && (
+              <div class="service-featured-badge">
+                <span class="badge badge-orange">Core Expertise</span>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS BENTO GRID -->
+  <section class="section skills-section" style="background:var(--secondary); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:3rem;">
+        <span class="eyebrow">Skills Breakdown</span>
+        <h2 class="section-title">Technical <em style="color:var(--blue)">Capabilities</em></h2>
+      </div>
+
+      <div class="skills-bento">
+        {skills.map((category, ci) => (
+          <div class:list={['skill-category card reveal', `reveal-delay-${ci + 1}`, category.category === 'Social Media' && 'cat-featured']}>
+            <div class="cat-header">
+              <span class="cat-label eyebrow">{category.category}</span>
+              {category.category === 'Additional' && (
+                <span class="badge badge-grey" style="font-size:0.6rem;">Supporting Skill</span>
+              )}
+            </div>
+            <ul class="skill-tags">
+              {category.items.map(skill => (
+                <li class:list={['skill-pill', ci % 2 === 0 ? 'pill-orange' : 'pill-blue']}>{skill}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS & PLATFORMS -->
+  <section class="section tools-section">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:3rem;">
+        <span class="eyebrow">Tools & Platforms</span>
+        <h2 class="section-title">What I <em style="color:var(--orange)">Work With</em></h2>
+      </div>
+
+      <div class="tools-grid">
+        {[
+          { name: 'Shopify', desc: 'Dashboard operations, product uploads, order management', icon: '🏪', type: 'orange' },
+          { name: 'Daraz', desc: 'Seller Centre — product listing, orders, customer management', icon: '🛒', type: 'blue' },
+          { name: 'Alfa Mall', desc: 'Seller panel — listings, pricing, stock, orders', icon: '🏬', type: 'grey' },
+          { name: 'Canva', desc: 'Social media graphics, banners, promotional materials', icon: '🎨', type: 'orange' },
+          { name: 'AI Image Tools', desc: 'AI-generated product photography for e-commerce', icon: '🤖', type: 'blue' },
+          { name: 'Video Editing', desc: 'Short-form video editing for social media and product reels', icon: '🎬', type: 'grey' },
+          { name: 'Instagram', desc: 'Content creation, reels, stories, engagement', icon: '📸', type: 'orange' },
+          { name: 'Facebook', desc: 'Announcements, event coverage, community management', icon: '📘', type: 'blue' },
+        ].map((tool, i) => (
+          <div class:list={['tool-card card reveal', `reveal-delay-${(i % 4) + 1}`]}>
+            <div class="tool-icon">{tool.icon}</div>
+            <div class="tool-info">
+              <div class="tool-name">{tool.name}</div>
+              <div class="tool-desc">{tool.desc}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+.page-header {
+  position: relative;
+  padding: 6rem 0 4rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: var(--grey);
+  margin-top: 1rem;
+  max-width: 540px;
+}
+
+.ph-glow-orange {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: var(--orange);
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.07;
+  top: -150px;
+  right: -150px;
+  pointer-events: none;
+}
+
+/* Services Bento */
+.services-bento {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .services-bento { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 1024px) {
+  .services-bento {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+  }
+  .service-featured {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }
+}
+
+.service-card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.service-featured {
+  background: linear-gradient(135deg, var(--card), rgba(255,107,53,0.05));
+  border-color: rgba(255,107,53,0.2);
+}
+
+.service-icon-wrap { margin-bottom: 0.25rem; }
+.service-icon-lg { font-size: 2.5rem; }
+
+.service-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.service-featured .service-title { font-size: 1.5rem; }
+
+.service-desc {
+  font-size: 0.82rem;
+  color: var(--grey);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.service-featured .service-desc { font-size: 0.9rem; }
+
+.service-featured-badge { margin-top: auto; }
+
+/* Skills Bento */
+.skills-bento {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) { .skills-bento { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) {
+  .skills-bento { grid-template-columns: repeat(3, 1fr); }
+  .cat-featured { grid-column: 1 / 3; }
+}
+
+.skill-category { padding: 1.75rem; }
+
+.cat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.cat-label { color: var(--grey); }
+
+.skill-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-pill {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.pill-orange {
+  background: rgba(255, 107, 53, 0.1);
+  color: rgba(255, 107, 53, 0.9);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+.pill-orange:hover {
+  background: rgba(255, 107, 53, 0.2);
+  border-color: rgba(255, 107, 53, 0.4);
+}
+
+.pill-blue {
+  background: rgba(57, 123, 255, 0.1);
+  color: rgba(57, 123, 255, 0.9);
+  border: 1px solid rgba(57, 123, 255, 0.2);
+}
+
+.pill-blue:hover {
+  background: rgba(57, 123, 255, 0.2);
+  border-color: rgba(57, 123, 255, 0.4);
+}
+
+/* Tools Grid */
+.tools-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) { .tools-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .tools-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.tool-card {
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.tool-icon { font-size: 1.75rem; flex-shrink: 0; }
+.tool-name { font-weight: 700; color: var(--white); font-size: 0.95rem; margin-bottom: 0.3rem; }
+.tool-desc { font-size: 0.78rem; color: var(--grey); line-height: 1.5; }
+</style>
+
